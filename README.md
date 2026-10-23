@@ -63,4 +63,3 @@ Supabase and Cloudflare free plans have provider-set usage, build, storage, and 
 - Use a second account and verify it cannot read or modify the first shop's rows.
 - Verify Supabase Auth redirect URLs and the Cloudflare Pages domain after deployment.
 - Push to GitHub and connect the repository to Cloudflare Pages after choosing repository visibility.
-

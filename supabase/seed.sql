@@ -1,0 +1,3 @@
+-- Fictional local-only fixture guidance; use only in a disposable local database.
+-- Create a user through Supabase Auth first, then insert a shop using that user's UUID.
+-- Do not seed a production project with these sample values.
