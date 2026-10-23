@@ -2,6 +2,9 @@
 
 A full-stack inventory and sales manager designed for one small shop. ShopStock BD helps shop owners track products, watch low stock, record multi-item sales, and keep a searchable receipt history in Bangladeshi taka.
 
+**Live app:** [shopstock-bd.pages.dev](https://shopstock-bd.pages.dev)  
+**Public source:** [github.com/rafidislam2222/shopstock-bd](https://github.com/rafidislam2222/shopstock-bd)
+
 ## Features
 
 - Email/password authentication and first-login shop setup
@@ -43,7 +46,7 @@ Review migrations in a non-production Supabase project before applying them to a
 
 ## Deploy to Cloudflare Pages
 
-Create a Pages project connected to the GitHub repository. Use the Vite preset or set the build command to `npm run build` and build output directory to `dist`. Add `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY` as Pages environment variables for production (and preview if desired). Configure matching Supabase Auth site and redirect URLs. Never provide a Supabase secret key to Pages frontend builds.
+The production Pages project is connected to the `main` branch and deploys automatically on new commits. Its build command is `npm run build`, with `dist` as the output directory. The Supabase project URL and publishable key are configured as Pages build variables. Supabase Auth uses `https://shopstock-bd.pages.dev` as its site URL and allowed redirect URL. Never provide a Supabase secret key to Pages frontend builds.
 
 ## Free-tier notes
 
@@ -55,11 +58,9 @@ Supabase and Cloudflare free plans have provider-set usage, build, storage, and 
 
 ## Manual verification checklist
 
-- Create a Supabase project, apply the migration, and configure the publishable environment variables.
-- Verify signup/email confirmation, login, shop setup, and logout with a real Supabase Auth account.
+- Create an account from the live app and verify email confirmation, login, shop setup, and logout.
 - Create, edit, archive, search, and filter products against Supabase.
 - Record a multi-item sale; verify the receipt snapshot and stock decrement in PostgreSQL.
 - Try zero, fractional, and over-stock sale quantities; confirm the RPC rejects them and stock remains unchanged.
 - Use a second account and verify it cannot read or modify the first shop's rows.
-- Verify Supabase Auth redirect URLs and the Cloudflare Pages domain after deployment.
-- Push to GitHub and connect the repository to Cloudflare Pages after choosing repository visibility.
+
